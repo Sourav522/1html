@@ -66,7 +66,28 @@
         if (isSignedIn) {
           authorizeButton.style.display = 'none';
           signoutButton.style.display = 'block';
-          listMajors();
+          //listMajors();
+                var values = [
+        [
+          2
+        ],
+        
+      ];
+      var body = {
+        values: values
+      };
+      gapi.client.sheets.spreadsheets.values.update({
+         spreadsheetId: '199R1SZQ2V-9MaNMqCo9kNJIKMmc0wmbvn_PO-lmTL8s',
+         range: 'A1',
+         valueInputOption: 'USER_ENTERED',
+         resource: body
+      }).then((response) => {
+        var result = response.result;
+        console.log(`${result.updatedCells} cells updated.`);
+      });
+          
+          
+          
         } else {
           authorizeButton.style.display = 'block';
           signoutButton.style.display = 'none';
