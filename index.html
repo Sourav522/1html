@@ -10,6 +10,8 @@
     <!--Add buttons to initiate auth sequence and sign out-->
     <button id="authorize_button" style="display: none;">Authorize</button>
     <button id="signout_button" style="display: none;">Sign Out</button>
+    Enter your name:
+    <input type='text' id='sampleInput'>
 
     <pre id="content" style="white-space: pre-wrap;"></pre>
 
@@ -107,9 +109,10 @@
        * Print the names and majors of students in a sample spreadsheet:
        * https://docs.google.com/spreadsheets/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms/edit
        */
+      var sampleInput=document.getElementById('sampleInput').value;
       var values = [
   [
-    '2'
+    sampleInput.toString();
   ],
   // Additional rows ...
 ];
