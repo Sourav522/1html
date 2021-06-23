@@ -109,17 +109,12 @@
        * Print the names and majors of students in a sample spreadsheet:
        * https://docs.google.com/spreadsheets/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms/edit
        */
-      var sampleInput=document.getElementById('sampleInput').value;
-      var values = [
-  [
-    sampleInput.toString()
-  ],
-  // Additional rows ...
-];
-var body = {
-  values: values
-};
+      
       function listMajors() {
+        var sampleInput=document.getElementById('sampleInput').value;
+      var values = [[sampleInput.toString()],];
+      var body = { values: values};
+        
         gapi.client.sheets.spreadsheets.values.update({
           spreadsheetId: '199R1SZQ2V-9MaNMqCo9kNJIKMmc0wmbvn_PO-lmTL8s', 
           range: 'A1',
